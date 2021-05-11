@@ -21,8 +21,24 @@ Personally, I prefer the second approach.  The reason is that you don't have to 
 
 (This is only used for the first approach above and just for demonstration purposes.  You can easily substitue any additional data source, including Wikidata.)
 
-We will be working with the Google Knowledge Graph REST API in this example.  Users are permitted 100,000 calls per day for free to the API, but will require an API key for the API calls.  A link on how to create this API key is below.  Once the key is created, it is recommended that you store in in a file named `.api_key` at the root level of this repo.
+We will be working with the Google Knowledge Graph REST API in this example.  Users are permitted 100,000 calls per day for free to the API, but will require an API key for the API calls.  A link on how to create this API key is below.  Once the key is created, it is recommended that you store in in a file named `.api_key` at the root level of this repo.  This should go in the `notebooks/` subdirectory.
 
+## How to run the code
+
+With Docker and docker-compose installed, from the CLI:
+
+```
+docker-compose build
+docker-compose up
+```
+
+Take the link for Jupyter Lab from the terminal (it has the notebook token with it) and copy and paste that into your web browser.  To open the Neo4j browser, navigate to `localhost:7474`.  The login is `neo4j` and the password is `kgDemo`.  These are set on line 15 in `docker-compose.yml` and you can change them to anything you like.  
+
+When you are done, you can shut down the container by hitting `CTRL-C` in the terminal and then at the prompt:
+
+```
+docker-compose down
+```
 
 ## Useful links
 
