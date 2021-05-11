@@ -1,0 +1,39 @@
+version: '3.7'
+
+services:
+  neo4j:
+    image: neo4j:4.2.3-enterprise
+    container_name: "neo-gds1.5"
+    volumes:
+      - $HOME/graph_data/kg_svo:/data
+      - $HOME/graph_data/kg_svo:/var/lib/neo4j/import
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    environment:
+      - NEO4J_ACCEPT_LICENSE_AGREEMENT=yes
+      - NEO4J_AUTH=neo4j/1234
+      - NEO4JLABS_PLUGINS=["apoc", "graph-data-science"]
+      - apoc.import.file.enabled=true
+      - NEO4J_dbms_memory_pagecache_size=4G
+      - NEO4j_dbms_memory_heap_initial__size=4G
+      - NEO4J_dbms_memory_heap_max__size=8G
+    networks:
+      - odsc_net
+
+  jupyterlab:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+    links:
+      - neo4j
+    networks:
+      - odsc_net
+
+networks:
+  odsc_net:    
+
