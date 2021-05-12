@@ -107,3 +107,44 @@ RETURN node
 // Which nodes have been labeled as Unknown?
 MATCH (u:Unknown) RETURN u.name, u.node_labels
 
+// Create an in-memory, undirected graph of all nodes
+CALL gds.graph.create(
+	'all_nodes',
+    {
+    	AllNodes: {label: 'Node', 
+                   properties: {word_vec_embedding: {property: 'word_vec'}}}
+    },
+    {
+    	AllRels: {type: '*', orientation: 'UNDIRECTED'}
+    }
+)
+YIELD graphName, nodeCount, relationshipCount
+
+// Run node2vec on this graph
+CALL gds.alpha.node2vec.stream('all_nodes', {embeddingDimension: 10}) 
+YIELD nodeId, embedding 
+RETURN gds.util.asNode(nodeId).name as name, embedding
+
+// Write node2vec as a property to main DB
+CALL gds.alpha.node2vec.write('all_nodes', 
+    { 
+        embeddingDimension: 300, 
+        writeProperty: 'n2v_all_nodes'
+    } 
+)
+
+// Two similarities based on node2vec embeddings
+MATCH (n1:Node {name: 'oh bah mə'}) 
+MATCH (n2:Node {name: 'michelle lavaughn robinson obama'})
+RETURN gds.alpha.similarity.cosine(n1.n2v_all_nodes, n2.n2v_all_nodes) AS similarity
+
+MATCH (n1:Node {name: 'president barack obama'}) 
+MATCH (n2:Node {name: 'mitch mcconnell'}) 
+RETURN gds.alpha.similarity.cosine(n1.n2v_all_nodes, n2.n2v_all_nodes) AS similarity
+
+MATCH (n1:Node {name: 'oh bah mə'}) 
+MATCH (n2:Node {name: 'mitch mcconnell'}) 
+RETURN gds.alpha.similarity.cosine(n1.n2v_all_nodes, n2.n2v_all_nodes) AS similarity
+
+
+
