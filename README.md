@@ -17,11 +17,15 @@ While either of these methods works, the benefit of the first approach is that y
 
 Personally, I prefer the second approach.  The reason is that you don't have to do _too_ much NLP on the unstructured text.  You will still use named entity resolution on the input text, but Spacy handles that pretty easily.  The first approach, on the other hand, relies on the ability to accurately detect the verbs and attribute them to subjects and objects, which is very complicated.  The second approach is much cleaner.  Further, complicated NLP approaches like the first require much more tuning.  NLP is not a so-called "silver bullet."  It requires a lot of tuning and is very specific to the language and vocabulary.  If the vocabulary is particularly technical, it is likely that you will find Wikidata to provide you with superior results.
 
-## A note on the use of the Google Knowledge Graph
+### A note on the use of the Google Knowledge Graph
 
 (This is only used for the first approach above and just for demonstration purposes.  You can easily substitue any additional data source, including Wikidata.)
 
 We will be working with the Google Knowledge Graph REST API in this example.  Users are permitted 100,000 calls per day for free to the API, but will require an API key for the API calls.  A link on how to create this API key is below.  Once the key is created, it is recommended that you store in in a file named `.api_key` at the root level of this repo.  This should go in the `notebooks/` subdirectory.
+
+### A note on scraping Wikidata with a bot
+
+We will be using [Pywikibot](https://www.mediawiki.org/wiki/Manual:Pywikibot) to scrape entries from Wikidata.  In order to do this, you will need to create a token for this bot.  Directions on how to do so can be found [here](https://heardlibrary.github.io/digital-scholarship/host/wikidata/bot/).  Once you have that token, save it into a file named `.wiki_api_token` in the `notebooks/` subdirectory.
 
 ## How to run the code
 
