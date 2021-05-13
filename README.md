@@ -44,6 +44,10 @@ When you are done, you can shut down the container by hitting `CTRL-C` in the te
 docker-compose down
 ```
 
+### Note on using multiple databases (like are shown in this repo)
+
+You might find it convenient to have two different databases, one for each method.  In order to achieve this, edit lines 8 and 9 in `docker-compose.yml` to reflect that (i.e. make a different directory for each graph).  You might find this helpful if, like me, you screw up one and don't want to recreate the other.  :)
+
 ## Useful links
 
 - [Docker for Data Science -- A Step by Step Guide](https://towardsdatascience.com/docker-for-data-science-a-step-by-step-guide-1e5f7f3baf8e)
