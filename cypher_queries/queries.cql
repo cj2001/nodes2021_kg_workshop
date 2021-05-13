@@ -219,3 +219,42 @@ MATCH (n) WHERE n.is_place IS NULL SET n.is_place=0
 
 // Get a random set of those non-place nodes to add to model data
 MATCH (n {is_place: 0}) WHERE rand() < 0.48 SET n:Model_Data
+
+// Set some holdout data
+MATCH (n) 
+WHERE NOT n:Model_Data 
+SET n:Holdout_Data 
+RETURN COUNT(n)
+
+// Which of these have an unknown label?
+MATCH (n:Holdout_Data {type: 'Unknown'}) RETURN n.name
+
+// Create in-memory graph of model data
+CALL gds.graph.create(
+	'all_nodes',
+    {
+    	ModelNodes: {label: 'Model_Data'},
+        HoldoutNodes: {label: 'Holdout_Data'}
+    },
+    {
+    	AllRels: {type: '*', orientation: 'UNDIRECTED'}
+    }
+)
+YIELD graphName, nodeCount, relationshipCount
+
+// Create n2v embeddings
+CALL gds.alpha.node2vec.write('all_nodes', 
+    { 
+        embeddingDimension: 300, 
+        writeProperty: 'n2v_all_nodes'
+    } 
+)
+
+// Create FastRP embeddings
+CALL gds.fastRP.write(
+	'all_nodes',
+    {embeddingDimension: 300, writeProperty: 'frp_all_nodes'}
+)
+
+
+
