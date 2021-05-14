@@ -29,9 +29,13 @@ RETURN n LIMIT 1
 // See complete graph
 MATCH (n) RETURN n
 
-// Update node labels based on node_labels list
+// Convert string labels to list(string)
 MATCH (n:Node) 
-CALL apoc.create.addLabels(n, n.node_labels) 
+SET n.type_ls = apoc.convert.toStringList(n.type)
+
+// Update node labels based on type_ls list
+MATCH (n:Node) 
+CALL apoc.create.addLabels(n, n.type_ls) 
 YIELD node 
 RETURN node
 
