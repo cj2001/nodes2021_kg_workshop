@@ -30,6 +30,7 @@ RETURN n LIMIT 1
 MATCH (n) RETURN n
 
 // Convert string labels to list(string)
+
 MATCH (n:Node) 
 SET n.type_ls = apoc.convert.toStringList(n.type)
 
