@@ -130,4 +130,6 @@ dmypy.json
 
 # Google API key
 .api_key
+
+# Wikidata API token
 .wiki_api_token
