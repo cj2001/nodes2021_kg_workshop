@@ -21,7 +21,7 @@ Personally, I prefer the second approach.  The reason is that you don't have to 
 
 (This is only used for the first approach above and just for demonstration purposes.  You can easily substitue any additional data source, including Wikidata.)
 
-We will be working with the Google Knowledge Graph REST API in this example.  Users are permitted 100,000 calls per day for free to the API, but will require an API key for the API calls.  A link on how to create this API key is below.  Once the key is created, it is recommended that you store in in a file named `.api_key` at the root level of this repo.  This should go in the `notebooks/` subdirectory.
+We will be working with the Google Knowledge Graph REST API in this example.  Users are permitted 100,000 calls per day for free to the API, but will require an API key for the API calls.  LINK HERE A link on how to create this API key is below.  Once the key is created, it is recommended that you store in in a file named `.api_key` at the root level of this repo.  This should go in the `notebooks/` subdirectory.
 
 ### A note on scraping Wikidata with a bot
 
