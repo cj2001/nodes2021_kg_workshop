@@ -1,13 +1,12 @@
-# NODES 2021 Workshop: Creating a Knowledge Graph with Neo4j
-## A Simple Machine Learning Approach
-### Written by: Dr. Clair J. Sullivan, Graph Data Science Advocate, Neo4j
+# NODES 2021 Workshop: Creating a Knowledge Graph with Neo4j: A Simple Machine Learning Approach
+### Written by: Dr. Clair J. Sullivan, Data Science Advocate, Neo4j
 #### email: clair.sullivan@neo4j.com
 #### Twitter: @CJLovesData1
 #### Last updated: 2021-05-25
 
 ## Introduction
 
-This repository contains the information needed for the NODES 2021 workshop entitled "Creating a Knowledge Graph with Neo4j: A Simple Machine Learning Approach."  It is based off of a Docker container that establishes the Neo4j database as well as a Jupyter Lab instance.  
+This repository contains the information needed for the NODES 2021 workshop entitled "Creating a Knowledge Graph with Neo4j: A Simple Machine Learning Approach."  It is based off of a Docker container that establishes the Neo4j database as well as a Jupyter Lab instance.  In order to get the most out of this workshop you should be comfortable with Python 3.  We will assume a minimal understanding of Cypher. 
 
 ## Instructions for pre-workshop preparation
 
