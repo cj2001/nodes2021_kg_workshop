@@ -1,15 +1,22 @@
-# Knowledge Graph Demo
+# NODES 2021 Workshop: Creating a Knowledge Graph with Neo4j
+## A Simple Machine Learning Approach
 ### Written by: Dr. Clair J. Sullivan, Graph Data Science Advocate, Neo4j
 #### email: clair.sullivan@neo4j.com
 #### Twitter: @CJLovesData1
-#### Last updated: 2021-05-13
+#### Last updated: 2021-05-25
 
 ## Introduction
 
-This repository contains a demonstration for how to create and query a knowledge graph using Neo4j.  It is based off of a Docker container that establishes the Neo4j database as well as a Jupyter Lab instance.  There are two methods that will be in this demo of how to do this:
+This repository contains the information needed for the NODES 2021 workshop entitled "Creating a Knowledge Graph with Neo4j: A Simple Machine Learning Approach."  It is based off of a Docker container that establishes the Neo4j database as well as a Jupyter Lab instance.  There are two methods that will be in this demo of how to do this:
 
 1. A version based on natural language processing (NLP) using Spacy to extract (subject, verb, object) triples from Wikipedia and the Google Knowledge Graph via their API.
 2. A version that queries Wikidata given a series of items (based on the Wikidata Q-values) and their claims (using the Wikidata P-values).  The Q-values are used to create the subjects and objects of the triples while the P-values are used to create the verbs.
+
+## Instructions for pre-workshop preparation
+
+Below you will find information on how to created both an API key for the Google Knowledge Graph as well as the API token for Wikidata.  You will need to create these before the workshop.
+
+Additionally, note that this repository will be updated regularly between now and the workshop.  You are encouraged to pull the latest version of it just before the workshop to make sure you have the most up-to-date code.
 
 ### General Comment
 
