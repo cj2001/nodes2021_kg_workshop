@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   neo4j:
-    image: neo4j:4.2.3-enterprise
+    image: neo4j:4.2.7-enterprise
     container_name: "neo-gds1.5"
     volumes:
       - $HOME/graph_data/live_wiki:/data
