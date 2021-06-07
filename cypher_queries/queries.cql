@@ -36,7 +36,7 @@ SET n.type_ls = apoc.convert.toStringList(n.type)
 
 // Update node labels based on type_ls list
 MATCH (n:Node) 
-CALL apoc.create.addLabels(n, n.type_ls) 
+CALL apoc.create.addLabels(n, n.node_labels) 
 YIELD node 
 RETURN node
 
