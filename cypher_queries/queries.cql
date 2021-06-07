@@ -248,9 +248,9 @@ CALL gds.graph.create(
 YIELD graphName, nodeCount, relationshipCount
 
 // Create n2v embeddings
-CALL gds.alpha.node2vec.write('all_nodes', 
+CALL gds.beta.node2vec.write('all_nodes', 
     { 
-        embeddingDimension: 300, 
+        embeddingDimension: 10, 
         writeProperty: 'n2v_all_nodes'
     } 
 )
@@ -258,7 +258,7 @@ CALL gds.alpha.node2vec.write('all_nodes',
 // Create FastRP embeddings
 CALL gds.fastRP.write(
 	'all_nodes',
-    {embeddingDimension: 300, writeProperty: 'frp_all_nodes'}
+    {embeddingDimension: 10, writeProperty: 'frp_all_nodes'}
 )
 
 
