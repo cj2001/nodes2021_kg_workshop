@@ -5,8 +5,8 @@ services:
     image: neo4j:4.2.7-enterprise
     container_name: "neo-gds"
     volumes:
-      - $HOME/graph_data/nodes_svo:/data
-      - $HOME/graph_data/nodes_svo:/var/lib/neo4j/import
+      - $HOME/graph_data/nodes_test:/data
+      - $PWD/data:/var/lib/neo4j/import
     ports:
       - "7474:7474"
       - "7687:7687"
