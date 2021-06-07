@@ -31,3 +31,5 @@ For additional informaton on restoring a database from a `.dump` file, please co
 ### Note on folder/file permissions
 
 Since Neo4j will claim ownership and permissions of `data/`, you will need to use `sudo` to access the files in there after running the container for the first time.
+
+**If you have a problem accessing the files from this repo, you can also download them from [this Google drive](https://drive.google.com/drive/folders/1qiyJxRNkBRpxWLuqKX8tqTxmnzqDqLaY?usp=sharing).
