@@ -133,7 +133,7 @@ RETURN gds.util.asNode(nodeId).name as name, embedding
 // Write node2vec as a property to main DB
 CALL gds.beta.node2vec.write('all_nodes', 
     { 
-        embeddingDimension: 300, 
+        embeddingDimension: 10, 
         writeProperty: 'n2v_all_nodes'
     } 
 )
