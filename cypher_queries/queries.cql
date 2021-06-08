@@ -29,14 +29,9 @@ RETURN n LIMIT 1
 // See complete graph
 MATCH (n) RETURN n
 
-// Convert string labels to list(string)
-
-MATCH (n:Node) 
-SET n.type_ls = apoc.convert.toStringList(n.type)
-
 // Update node labels based on type_ls list
 MATCH (n:Node) 
-CALL apoc.create.addLabels(n, n.type_ls) 
+CALL apoc.create.addLabels(n, n.node_labels) 
 YIELD node 
 RETURN node
 
@@ -126,14 +121,14 @@ CALL gds.graph.create(
 YIELD graphName, nodeCount, relationshipCount
 
 // Run node2vec on this graph
-CALL gds.alpha.node2vec.stream('all_nodes', {embeddingDimension: 10}) 
+CALL gds.beta.node2vec.stream('all_nodes', {embeddingDimension: 10}) 
 YIELD nodeId, embedding 
 RETURN gds.util.asNode(nodeId).name as name, embedding
 
 // Write node2vec as a property to main DB
-CALL gds.alpha.node2vec.write('all_nodes', 
+CALL gds.beta.node2vec.write('all_nodes', 
     { 
-        embeddingDimension: 300, 
+        embeddingDimension: 10, 
         writeProperty: 'n2v_all_nodes'
     } 
 )
@@ -222,6 +217,10 @@ SET n.is_place=1, n:Model_Data
 // Set is_place property for all other nodes
 MATCH (n) WHERE n.is_place IS NULL SET n.is_place=0
 
+// Count how many have is_place = 1
+// It should be around 413 with about 906 for is_place = 0
+MATCH (n {is_place: 1}) RETURN COUNT(n)
+
 // Get a random set of those non-place nodes to add to model data
 MATCH (n {is_place: 0}) WHERE rand() < 0.48 SET n:Model_Data
 
@@ -248,9 +247,9 @@ CALL gds.graph.create(
 YIELD graphName, nodeCount, relationshipCount
 
 // Create n2v embeddings
-CALL gds.alpha.node2vec.write('all_nodes', 
+CALL gds.beta.node2vec.write('all_nodes', 
     { 
-        embeddingDimension: 300, 
+        embeddingDimension: 10, 
         writeProperty: 'n2v_all_nodes'
     } 
 )
@@ -258,7 +257,7 @@ CALL gds.alpha.node2vec.write('all_nodes',
 // Create FastRP embeddings
 CALL gds.fastRP.write(
 	'all_nodes',
-    {embeddingDimension: 300, writeProperty: 'frp_all_nodes'}
+    {embeddingDimension: 10, writeProperty: 'frp_all_nodes'}
 )
 
 
