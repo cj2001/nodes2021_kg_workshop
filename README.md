@@ -57,6 +57,10 @@ docker-compose down
 
 You might find it convenient to have two different databases, one for each method.  In order to achieve this, edit lines 8 and 9 in `docker-compose.yml` to reflect that (i.e. make a different directory for each graph).  You might find this helpful if, like me, you screw up one and don't want to recreate the other.  :)
 
+### Another note on the location of the database files
+
+The first time you run this container from the repo, the permissions on `data/` will be changed to root.  This means that all subsequent runnings of `docker-compose` will need to be executed by `sudo`.  However, this also will change the directory forwarding in the `.yml` file at line 8 since `$HOME` will change from your personal login to `root`.  To adjust for this, you can explicitly change `$HOME` to a hard-coded path or you can leave it and find your database backups at `/root/graph_data/`.
+
 ## Useful links
 
 - [Docker for Data Science -- A Step by Step Guide](https://towardsdatascience.com/docker-for-data-science-a-step-by-step-guide-1e5f7f3baf8e)
