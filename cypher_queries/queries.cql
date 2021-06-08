@@ -222,6 +222,10 @@ SET n.is_place=1, n:Model_Data
 // Set is_place property for all other nodes
 MATCH (n) WHERE n.is_place IS NULL SET n.is_place=0
 
+// Count how many have is_place = 1
+// It should be around 413 with about 906 for is_place = 0
+MATCH (n {is_place: 1}) RETURN COUNT(n)
+
 // Get a random set of those non-place nodes to add to model data
 MATCH (n {is_place: 0}) WHERE rand() < 0.48 SET n:Model_Data
 
