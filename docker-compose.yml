@@ -5,8 +5,9 @@ services:
     image: neo4j:4.2.7-enterprise
     container_name: "neo-gds"
     volumes:
-      - $HOME/graph_data/nodes_svo_demo:/data
-      - $PWD/data:/var/lib/neo4j/import
+      - $HOME/graph_data/nodes_svo_json2:/data
+      # - $PWD/data:/var/lib/neo4j/import
+      - ./data:/var/lib/neo4j/import
     ports:
       - "7474:7474"
       - "7687:7687"
@@ -18,6 +19,7 @@ services:
       - NEO4J_dbms_memory_pagecache_size=4G
       - NEO4j_dbms_memory_heap_initial__size=4G
       - NEO4J_dbms_memory_heap_max__size=8G
+      - apoc.export.file.enabled=true
     networks:
       - odsc_net
 
