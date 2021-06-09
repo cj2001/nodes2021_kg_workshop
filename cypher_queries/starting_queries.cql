@@ -17,3 +17,7 @@ RETURN n LIMIT 1
 
 // Get history of previous querys (limit: 30 with default setup)
 :history
+
+// Import SVO graph from JSON on GitHub
+CALL apoc.import.json("https://raw.githubusercontent.com/cj2001/nodes2021_kg_workshop/main/json_files/svo.json")
+
