@@ -19,21 +19,9 @@ MATCH (n:Node)
 WHERE n.name CONTAINS 'obama'
 RETURN DISTINCT n.name
 
-// Can we figure out the nationality of 'oh bah mə'
-MATCH (n:Node {name: 'oh bah mə'})-[*1..5]->(p) 
-WHERE p:Country OR p:AdministrativeArea OR p:Continent OR p:Place
-RETURN n, p
+// ***PROBLEM: WHERE WAS BARACK OBAMA BORN?***
 
-MATCH (n:Node {name: 'oh bah mə'})-[:be|:bear]->(p) 
-WHERE p:Country OR p:AdministrativeArea OR p:Continent OR p:Place 
-RETURN n, p
-
-// Check for duplicates
-MATCH (n:Node)
-WITH n.name AS name, n.node_labels AS labels, COLLECT(n) AS nodes
-WHERE SIZE(nodes) > 1
-RETURN [n in nodes | n.name] AS names, [n in nodes | n.node_labels] as labels, SIZE(nodes)
-ORDER BY SIZE(nodes) DESC
+// ***PROBLEM: HOW MANY DUPLICATES ARE THERE?***
 
 // Drop duplicates
 MATCH (n:Node) 
