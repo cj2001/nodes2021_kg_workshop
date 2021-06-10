@@ -5,12 +5,6 @@
 //
 ///////////////////
 
-// Find duplicates
-MATCH (n:Node) 
-WITH n.name AS name, n.node_labels AS labels, COLLECT(n) AS nodes 
-WHERE SIZE(nodes) > 1 
-RETURN [n in nodes | n.name] AS names, [n in nodes | n.node_labels] as labels, SIZE(nodes) 
-ORDER BY SIZE(nodes) DESC
 
 // Drop duplicates (there aren't many)
 MATCH (n:Node) 
@@ -26,6 +20,8 @@ SET n.type_ls = apoc.convert.toStringList(n.type)
 MATCH (n:Node) 
 CALL apoc.create.addLabels(n, n.type_ls) 
 YIELD node RETURN node
+
+// ***PROBLEM: WHERE WAS BARACK OBAMA BORN?***
 
 // Find a lot of places
 MATCH (n)
@@ -71,9 +67,9 @@ MATCH (n) WHERE n.is_place IS NULL SET n.is_place=0
 // Count how many have is_place = 1
 // It should be around 413 with about 906 for is_place = 0
 MATCH (n {is_place: 1}) RETURN COUNT(n)
+MATCH (n {is_place: 0}) RETURN COUNT(n)
 
-// Get a random set of those non-place nodes to add to model data
-MATCH (n {is_place: 0}) WHERE rand() < 0.48 SET n:Model_Data
+// ***PROBLEM: HOW COULD WE HAVE (ROUGHLY) BALANCED CLASSES?***
 
 // Set some holdout data
 MATCH (n) 
