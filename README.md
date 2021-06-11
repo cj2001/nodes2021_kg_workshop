@@ -2,7 +2,7 @@
 ### Written by: Dr. Clair J. Sullivan, Data Science Advocate, Neo4j
 #### email: clair.sullivan@neo4j.com
 #### Twitter: @CJLovesData1
-#### Last updated: 2021-06-10
+#### Last updated: 2021-06-11
 
 ## Introduction
 
@@ -44,6 +44,8 @@ With Docker and docker-compose installed, from the CLI:
 docker-compose build
 docker-compose up
 ```
+
+(Note: if you have already built the container and run it once, Neo4j assumes ownership of `data/` as group and user `7474:7474`, which means the only way to access it is via `sudo`.  Therefore, you might need to run the above two commands via `sudo`.)
 
 Take the link for Jupyter Lab from the terminal (it has the notebook token with it) and copy and paste that into your web browser.  To open the Neo4j browser, navigate to `localhost:7474`.  The login is `neo4j` and the password is `kgDemo`.  These are set on line 15 in `docker-compose.yml` and you can change them to anything you like.  
 
