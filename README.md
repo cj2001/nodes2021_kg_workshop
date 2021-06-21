@@ -55,6 +55,11 @@ When you are done, you can shut down the container by hitting `CTRL-C` in the te
 docker-compose down
 ```
 
+### A note regarding the memory configuration in the `docker-compose.yml` file
+
+There are some variables in the file such as `NEO4J_dbms_memory_pagecache_size` that have been set to some somewhat arbitrary values.  This should be set for values corresponding to the available memory on your computer.  If these values, say, exceed the available memory on your machine, you can either edit them or comment them out entirely.
+
+
 ### Note on using multiple databases (like are shown in this repo)
 
 You might find it convenient to have two different databases, one for each method.  In order to achieve this, edit lines 8 and 9 in `docker-compose.yml` to reflect that (i.e. make a different directory for each graph).  You might find this helpful if, like me, you screw up one and don't want to recreate the other.  :)
