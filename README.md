@@ -2,7 +2,9 @@
 ### Written by: Dr. Clair J. Sullivan, Data Science Advocate, Neo4j
 #### email: clair.sullivan@neo4j.com
 #### Twitter: @CJLovesData1
-#### Last updated: 2021-06-11
+#### Last updated: Code on 2021-06-11, slides added on 2021-07-06!
+
+## The workshop video can be found [here](https://neo4j.brand.live/c/2021nodes-training-friday/?_ga=2.149908530.564237191.1624272334-598225851.1621257094&mkt_tok=NzEwLVJSQy0zMzUAAAF9zydFEhzp_GF2haFqrzp5LllZs5uE9V0_wDv9NlQk5-AryAu2egc-LYej20lfYiuUF0Or6CnR4ZDqmnC87iPopxitEPP28PiVClT5Cnmwlyyr)!
 
 ## Introduction
 
