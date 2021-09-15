@@ -38,7 +38,7 @@ We will be working with the Google Knowledge Graph REST API in this example.  Us
 
 We will be using [Pywikibot](https://www.mediawiki.org/wiki/Manual:Pywikibot) to scrape entries from Wikidata.  In order to do this, you will need to create a token for this bot.  Directions on how to do so can be found [here](https://heardlibrary.github.io/digital-scholarship/host/wikidata/bot/).  Once you have that token, save it into a file named `.wiki_api_token` in the `notebooks/` subdirectory.
 
-## How to run the code from Docker
+## How to run the code from Docker (OPTIONAL as of 2021-09)
 
 With Docker and docker-compose installed, from the CLI:
 
@@ -72,6 +72,8 @@ The first time you run this container from the repo, the permissions on `data/` 
 
 ## Useful links
 
+- [Google Colab](https://colab.research.google.com/notebooks/welcome.ipynb)
+- [Project Jupyter](https://jupyter.org/)
 - [Docker for Data Science -- A Step by Step Guide](https://towardsdatascience.com/docker-for-data-science-a-step-by-step-guide-1e5f7f3baf8e)
 - [Google Knowledge Graph Search API](https://wikipedia.readthedocs.io/en/latest/)
   - [How to Create a Google Knowledge Graph Search API Key](https://developers.google.com/knowledge-graph/prereqs)
