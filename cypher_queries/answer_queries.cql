@@ -24,6 +24,3 @@ ORDER BY SIZE(nodes) DESC
 
 // Method 2: Where was Barack Obama born?
 MATCH (n:Node {name: 'Barack Obama'})-[:place_of_birth]->(place:Node) RETURN place.name
-
-// Get a random set of those non-place nodes to add to model data
-MATCH (n {is_place: 0}) WHERE rand() < 0.48 SET n:Model_Data

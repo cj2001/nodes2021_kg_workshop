@@ -2,13 +2,13 @@
 ### Written by: Dr. Clair J. Sullivan, Data Science Advocate, Neo4j
 #### email: clair.sullivan@neo4j.com
 #### Twitter: @CJLovesData1
-#### Last updated: Code on 2021-06-11, slides added on 2021-07-06!
-
-## The workshop video can be found [here](https://neo4j.brand.live/c/2021nodes-training-friday/?_ga=2.149908530.564237191.1624272334-598225851.1621257094&mkt_tok=NzEwLVJSQy0zMzUAAAF9zydFEhzp_GF2haFqrzp5LllZs5uE9V0_wDv9NlQk5-AryAu2egc-LYej20lfYiuUF0Or6CnR4ZDqmnC87iPopxitEPP28PiVClT5Cnmwlyyr)!
+#### Last updated: 2021-09-15
 
 ## Introduction
 
-This repository contains the information needed for the NODES 2021 workshop entitled "Creating a Knowledge Graph with Neo4j: A Simple Machine Learning Approach."  It is based off of a Docker container that establishes the Neo4j database as well as a Jupyter Lab instance.  In order to get the most out of this workshop you should be comfortable with Python 3.  We will assume a minimal understanding of Cypher. 
+This repository contains the information needed for the NODES 2021 workshop entitled "Creating a Knowledge Graph with Neo4j: A Simple Machine Learning Approach."  There have been a couple of runnings of this course, and it has evolved a bit each time.  In the original running (2021-06-11), it was based off of a Docker container with Jupyter connecting to a Neo4j database on your local machine.  In the most recent running (2021-09-17) we will be a bit more flexible.  We will be using free [Neo4j Sandbox](https://dev.neo4j.com/sandbox) instances and you can use either a Jupter notebook setup on your own machine or using [Google Colab](https://colab.research.google.com/).  
+
+For the sake of backwards compatibility, the original Docker container (which was used in the original running) is still available in this repository.  There are instructions below on how to use it.
 
 ## Instructions for pre-workshop preparation
 
@@ -38,7 +38,7 @@ We will be working with the Google Knowledge Graph REST API in this example.  Us
 
 We will be using [Pywikibot](https://www.mediawiki.org/wiki/Manual:Pywikibot) to scrape entries from Wikidata.  In order to do this, you will need to create a token for this bot.  Directions on how to do so can be found [here](https://heardlibrary.github.io/digital-scholarship/host/wikidata/bot/).  Once you have that token, save it into a file named `.wiki_api_token` in the `notebooks/` subdirectory.
 
-## How to run the code
+## How to run the code from Docker (OPTIONAL as of 2021-09)
 
 With Docker and docker-compose installed, from the CLI:
 
@@ -72,6 +72,8 @@ The first time you run this container from the repo, the permissions on `data/` 
 
 ## Useful links
 
+- [Google Colab](https://colab.research.google.com/notebooks/welcome.ipynb)
+- [Project Jupyter](https://jupyter.org/)
 - [Docker for Data Science -- A Step by Step Guide](https://towardsdatascience.com/docker-for-data-science-a-step-by-step-guide-1e5f7f3baf8e)
 - [Google Knowledge Graph Search API](https://wikipedia.readthedocs.io/en/latest/)
   - [How to Create a Google Knowledge Graph Search API Key](https://developers.google.com/knowledge-graph/prereqs)
@@ -85,6 +87,13 @@ The first time you run this container from the repo, the permissions on `data/` 
 - [spacy Documentation](https://spacy.io/)
 - [Wikipedia package docs](https://wikipedia.readthedocs.io/en/latest/)
 
+## Workshop videos
+
+This workshop has been run a couple of times and I will add to this list as the videos become available.  
+
+- Original running at NODES 2021 on 2021-06-11: [video](https://neo4j.brand.live/c/2021nodes-training-friday/?_ga=2.149908530.564237191.1624272334-598225851.1621257094&mkt_tok=NzEwLVJSQy0zMzUAAAF9zydFEhzp_GF2haFqrzp5LllZs5uE9V0_wDv9NlQk5-AryAu2egc-LYej20lfYiuUF0Or6CnR4ZDqmnC87iPopxitEPP28PiVClT5Cnmwlyyr)
+
+- Rerunning of NODES 2021 Workshops on 2021-09-17: _video coming soon!_ 
 
 ### Final Note
 

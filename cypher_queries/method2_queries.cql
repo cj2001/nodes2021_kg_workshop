@@ -59,7 +59,7 @@ WHERE ANY (x in n.type WHERE x IN
             'neighborhood of Washington, D.C.',
             'country']
 		  )
-SET n.is_place=1, n:Model_Data
+SET n.is_place=1
 
 // Set is_place property for all other nodes
 MATCH (n) WHERE n.is_place IS NULL SET n.is_place=0
@@ -67,34 +67,23 @@ MATCH (n) WHERE n.is_place IS NULL SET n.is_place=0
 // Count how many have is_place = 1
 // It should be around 413 with about 906 for is_place = 0
 MATCH (n {is_place: 1}) RETURN COUNT(n)
+
 MATCH (n {is_place: 0}) RETURN COUNT(n)
-
-// ***PROBLEM: HOW COULD WE HAVE (ROUGHLY) BALANCED CLASSES?***
-
-// Set some holdout data
-MATCH (n) 
-WHERE NOT n:Model_Data 
-SET n:Holdout_Data 
-RETURN COUNT(n)
-
-// Which of these have an unknown label?
-MATCH (n:Holdout_Data {type: 'Unknown'}) RETURN n.name
 
 // Create in-memory graph of model data
 CALL gds.graph.create(
 	'all_nodes',
+    'Node',
     {
-    	ModelNodes: {label: 'Model_Data'},
-        HoldoutNodes: {label: 'Holdout_Data'}
-    },
-    {
-    	AllRels: {type: '*', orientation: 'UNDIRECTED'}
+        RELS: {
+            type: '*',
+            orientation: 'UNDIRECTED'
+        }
     }
 )
-YIELD graphName, nodeCount, relationshipCount
 
 // Create n2v embeddings
-CALL gds.beta.node2vec.write('all_nodes', 
+CALL gds.beta.node2vec.write('places', 
     { 
         embeddingDimension: 10, 
         writeProperty: 'n2v_all_nodes'
@@ -103,6 +92,6 @@ CALL gds.beta.node2vec.write('all_nodes',
 
 // Create FastRP embeddings
 CALL gds.fastRP.write(
-	'all_nodes',
+	'places',
     {embeddingDimension: 10, writeProperty: 'frp_all_nodes'}
 )
