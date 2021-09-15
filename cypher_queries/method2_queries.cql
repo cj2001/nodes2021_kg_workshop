@@ -83,7 +83,7 @@ CALL gds.graph.create(
 )
 
 // Create n2v embeddings
-CALL gds.beta.node2vec.write('all_nodes', 
+CALL gds.beta.node2vec.write('places', 
     { 
         embeddingDimension: 10, 
         writeProperty: 'n2v_all_nodes'
@@ -92,6 +92,6 @@ CALL gds.beta.node2vec.write('all_nodes',
 
 // Create FastRP embeddings
 CALL gds.fastRP.write(
-	'all_nodes',
+	'places',
     {embeddingDimension: 10, writeProperty: 'frp_all_nodes'}
 )
