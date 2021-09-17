@@ -2,7 +2,7 @@
 ### Written by: Dr. Clair J. Sullivan, Data Science Advocate, Neo4j
 #### email: clair.sullivan@neo4j.com
 #### Twitter: @CJLovesData1
-#### Last updated: 2021-09-15
+#### Last updated: 2021-09-17
 
 ## Introduction
 
@@ -89,9 +89,11 @@ The first time you run this container from the repo, the permissions on `data/` 
 
 ## Workshop videos
 
-This workshop has been run a couple of times and I will add to this list as the videos become available.  
+This workshop has been run a couple of times and I will add to this list as the videos become available. 
 
-- Original running at NODES 2021 on 2021-06-11: [video](https://neo4j.brand.live/c/2021nodes-training-friday/?_ga=2.149908530.564237191.1624272334-598225851.1621257094&mkt_tok=NzEwLVJSQy0zMzUAAAF9zydFEhzp_GF2haFqrzp5LllZs5uE9V0_wDv9NlQk5-AryAu2egc-LYej20lfYiuUF0Or6CnR4ZDqmnC87iPopxitEPP28PiVClT5Cnmwlyyr)
+- Rerun of workshop of 2021-09-17: [video](https://dev.neo4j.com/kg_workshop)
+
+- Original running at NODES 2021 on 2021-06-11: [video](https://dev.neo4j.com/june_kg_workshop)
 
 - Rerunning of NODES 2021 Workshops on 2021-09-17: _video coming soon!_ 
 
