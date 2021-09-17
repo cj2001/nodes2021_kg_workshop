@@ -59,7 +59,7 @@ WHERE ANY (x in n.type WHERE x IN
             'neighborhood of Washington, D.C.',
             'country']
 		  )
-SET n.is_place=1
+SET n.is_place=1;
 
 // Set is_place property for all other nodes
 MATCH (n) WHERE n.is_place IS NULL SET n.is_place=0
@@ -83,7 +83,7 @@ CALL gds.graph.create(
 )
 
 // Create n2v embeddings
-CALL gds.beta.node2vec.write('places', 
+CALL gds.beta.node2vec.write('all_nodes', 
     { 
         embeddingDimension: 10, 
         writeProperty: 'n2v_all_nodes'
@@ -92,6 +92,6 @@ CALL gds.beta.node2vec.write('places',
 
 // Create FastRP embeddings
 CALL gds.fastRP.write(
-	'places',
+	'all_nodes',
     {embeddingDimension: 10, writeProperty: 'frp_all_nodes'}
 )
