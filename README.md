@@ -104,7 +104,3 @@ This workshop has been run a couple of times and I will add to this list as the 
 
 - Original running at NODES 2021 on 2021-06-11: [video](https://dev.neo4j.com/june_kg_workshop)
 
-
-### Final Note
-
-This notebook is heavily based off of a talk I gave at the 2021 Open Data Science Conference East, whose repository you can find [here](https://github.com/cj2001/odsc_east_kg_2021).
