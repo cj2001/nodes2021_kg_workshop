@@ -2,7 +2,7 @@
 ### Written by: Dr. Clair J. Sullivan, Data Science Advocate, Neo4j
 #### email: clair.sullivan@neo4j.com
 #### Twitter: @CJLovesData1
-#### Last updated: 2021-09-17
+#### Last updated: 2021-11-24
 
 ## Introduction
 
@@ -10,9 +10,16 @@ This repository contains the information needed for the NODES 2021 workshop enti
 
 For the sake of backwards compatibility, the original Docker container (which was used in the original running) is still available in this repository.  There are instructions below on how to use it.
 
+## Quick links for the workshop
+
+- [Google Colab](https://colab.research.google.com/)
+  - Note that this means **you will need a Google account** to use this!
+- [Neo4j Sandbox](https://dev.neo4j.com/sandbox)
+- [Neo4j Blank Graph Data Science Sandbox](https://dev.neo4j.com/blank_gds_sandbox)
+
 ## Instructions for pre-workshop preparation
 
-Below you will find information on how to created both an API key for the Google Knowledge Graph as well as the API token for Wikidata.  You will need to create these before the workshop.
+Below you will find information on how to created both an API key for the Google Knowledge Graph as well as the API token for Wikidata.  If you would like to create your own graph (versus using the graphs supplied in this repo), you will need to create these before the workshop.
 
 Additionally, note that this repository will be updated regularly between now and the workshop.  You are encouraged to pull the latest version of it just before the workshop to make sure you have the most up-to-date code.
 
@@ -72,6 +79,8 @@ The first time you run this container from the repo, the permissions on `data/` 
 
 ## Useful links
 
+- [Bite-Sized Neo4j for Data Scientists](https://neo4j.com/video/bite-sized-neo4j-for-data-scientists/)
+  - [Repository of Bite-Sized Code](https://dev.neo4j.com/bites_repo)
 - [Google Colab](https://colab.research.google.com/notebooks/welcome.ipynb)
 - [Project Jupyter](https://jupyter.org/)
 - [Docker for Data Science -- A Step by Step Guide](https://towardsdatascience.com/docker-for-data-science-a-step-by-step-guide-1e5f7f3baf8e)
@@ -95,8 +104,3 @@ This workshop has been run a couple of times and I will add to this list as the 
 
 - Original running at NODES 2021 on 2021-06-11: [video](https://dev.neo4j.com/june_kg_workshop)
 
-- Rerunning of NODES 2021 Workshops on 2021-09-17: _video coming soon!_ 
-
-### Final Note
-
-This notebook is heavily based off of a talk I gave at the 2021 Open Data Science Conference East, whose repository you can find [here](https://github.com/cj2001/odsc_east_kg_2021).
