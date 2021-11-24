@@ -10,9 +10,16 @@ This repository contains the information needed for the NODES 2021 workshop enti
 
 For the sake of backwards compatibility, the original Docker container (which was used in the original running) is still available in this repository.  There are instructions below on how to use it.
 
+## Quick links for the workshop
+
+- [Google Colab](https://colab.research.google.com/)
+  - Note that this means **you will need a Google account** to use this.
+- [Neo4j Sandbox](https://dev.neo4j.com/sandbox)
+- [Neo4j Blank Graph Data Science Sandbox](https://dev.neo4j.com/blank_gds_sandbox)
+
 ## Instructions for pre-workshop preparation
 
-Below you will find information on how to created both an API key for the Google Knowledge Graph as well as the API token for Wikidata.  You will need to create these before the workshop.
+Below you will find information on how to created both an API key for the Google Knowledge Graph as well as the API token for Wikidata.  If you would like to create your own graph (versus using the graphs supplied in this repo), you will need to create these before the workshop.
 
 Additionally, note that this repository will be updated regularly between now and the workshop.  You are encouraged to pull the latest version of it just before the workshop to make sure you have the most up-to-date code.
 
@@ -95,7 +102,6 @@ This workshop has been run a couple of times and I will add to this list as the 
 
 - Original running at NODES 2021 on 2021-06-11: [video](https://dev.neo4j.com/june_kg_workshop)
 
-- Rerunning of NODES 2021 Workshops on 2021-09-17: _video coming soon!_ 
 
 ### Final Note
 
