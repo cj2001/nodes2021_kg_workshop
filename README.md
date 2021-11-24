@@ -13,7 +13,7 @@ For the sake of backwards compatibility, the original Docker container (which wa
 ## Quick links for the workshop
 
 - [Google Colab](https://colab.research.google.com/)
-  - Note that this means **you will need a Google account** to use this.
+  - Note that this means **you will need a Google account** to use this!
 - [Neo4j Sandbox](https://dev.neo4j.com/sandbox)
 - [Neo4j Blank Graph Data Science Sandbox](https://dev.neo4j.com/blank_gds_sandbox)
 
@@ -79,6 +79,8 @@ The first time you run this container from the repo, the permissions on `data/` 
 
 ## Useful links
 
+- [Bite-Sized Neo4j for Data Scientists](https://neo4j.com/video/bite-sized-neo4j-for-data-scientists/)
+  - [Repository of Bite-Sized Code](https://dev.neo4j.com/bites_repo)
 - [Google Colab](https://colab.research.google.com/notebooks/welcome.ipynb)
 - [Project Jupyter](https://jupyter.org/)
 - [Docker for Data Science -- A Step by Step Guide](https://towardsdatascience.com/docker-for-data-science-a-step-by-step-guide-1e5f7f3baf8e)
