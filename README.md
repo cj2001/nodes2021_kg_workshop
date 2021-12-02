@@ -4,7 +4,7 @@
 #### Twitter: @CJLovesData1
 #### Last updated: 2021-11-24
 
-## Introduction
+## Introduction .
 
 This repository contains the information needed for the NODES 2021 workshop entitled "Creating a Knowledge Graph with Neo4j: A Simple Machine Learning Approach."  There have been a couple of runnings of this course, and it has evolved a bit each time.  In the original running (2021-06-11), it was based off of a Docker container with Jupyter connecting to a Neo4j database on your local machine.  In the most recent running (2021-09-17) we will be a bit more flexible.  We will be using free [Neo4j Sandbox](https://dev.neo4j.com/sandbox) instances and you can use either a Jupter notebook setup on your own machine or using [Google Colab](https://colab.research.google.com/).  
 
